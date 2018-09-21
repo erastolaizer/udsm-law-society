@@ -3,6 +3,12 @@
 // --------------------------------------------------
 
 // global styles
+.appMenu {
+  background-image: linear-gradient(135deg, color($colors, dark), color($colors, primary), color($colors, light));
+}
+.sideMenu {
+background-color: transparent !important ;
+}
 .primary-bg {
   background-color: color($colors, primary) !important;
 }
@@ -333,7 +339,8 @@ ion-navbar.no-border {
         margin-bottom: 0;
 
         ion-item {
-          background: none;
+          background-color: transparent !important ;
+          background: z;
           padding: 0;
 
           &:first-child {
@@ -484,6 +491,7 @@ ion-icon[ng-reflect-disabled="true"] {
 .ios {
   ion-list ion-item,
   .list-hotels .hotel-bg {
+    background-color: transparent !important ;
     pointer-events: none;
   }
 }

@@ -37,14 +37,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content color="primary">
+  <ion-content class="appMenu">
 
-    <ion-list class="user-list">
-      <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
-        <ion-icon item-left [name]="menuItem.icon" color="primary"></ion-icon>
-        <span ion-text color="primary">{{menuItem.title}}</span>
-      </button>
-    </ion-list>
+     <ion-item no-lines menuClose class="sideMenu bold text-white" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
+        <ion-icon item-left [name]="menuItem.icon" color="white"></ion-icon>
+        <span ion-text color="white">{{menuItem.title}}</span>
+      </ion-item> 
   </ion-content>
 
 </ion-menu>

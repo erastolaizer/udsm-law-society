@@ -8,6 +8,12 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
+import { AlmanacPage } from '../pages/almanac/almanac';
+import { CoursesPage } from '../pages/courses/courses';
+import { BackgroundPage } from '../pages/background/background';
+import { ElibraryPage } from '../pages/elibrary/elibrary';
+import { GalleryPage } from '../pages/gallery/gallery';
+import { NewsPage } from '../pages/news/news';
 
 export interface MenuItem {
     title: string;
@@ -22,7 +28,7 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 
   appMenuItems: Array<MenuItem>;
 
@@ -36,7 +42,12 @@ export class MyApp {
 
     this.appMenuItems = [
       {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'Local Weather', component: LocalWeatherPage, icon: 'partly-sunny'}
+      {title: 'UDSL Background', component: BackgroundPage, icon: 'home'},
+      {title: 'Almanac', component: AlmanacPage, icon: 'home'},
+      {title: 'Courses', component: CoursesPage, icon: 'home'},
+      {title: 'E-Library', component: ElibraryPage, icon: 'paper'},
+      {title: 'Gallery', component: GalleryPage, icon: 'camera'},
+      {title: 'News Hub', component: NewsPage, icon: 'home'}
     ];
   }
 

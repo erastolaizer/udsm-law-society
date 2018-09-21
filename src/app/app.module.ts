@@ -24,6 +24,12 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
+import { AlmanacPage } from '../pages/almanac/almanac';
+import { CoursesPage } from '../pages/courses/courses';
+import { BackgroundPage } from '../pages/background/background';
+import { ElibraryPage } from '../pages/elibrary/elibrary';
+import { GalleryPage } from '../pages/gallery/gallery';
+import { NewsPage } from '../pages/news/news';
 
 // import services
 // end import services
@@ -35,6 +41,12 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 @NgModule({
   declarations: [
     MyApp,
+    AlmanacPage,
+    CoursesPage,
+    BackgroundPage,
+    ElibraryPage,
+    GalleryPage,
+    NewsPage,
     SettingsPage,
     CheckoutTripPage,
     HomePage,
@@ -55,13 +67,19 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
       autoFocusAssist: false
     }),
     IonicStorageModule.forRoot({
-      name: '__ionic3_start_theme',
+      name: '__Udsm law society',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    AlmanacPage,
+    CoursesPage,
+    BackgroundPage,
+    ElibraryPage,
+    GalleryPage,
+    NewsPage,
     SettingsPage,
     CheckoutTripPage,
     HomePage,
