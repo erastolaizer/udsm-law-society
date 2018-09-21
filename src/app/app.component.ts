@@ -41,13 +41,13 @@ export class MyApp {
     this.initializeApp();
 
     this.appMenuItems = [
-      {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'UDSL Background', component: BackgroundPage, icon: 'home'},
-      {title: 'Almanac', component: AlmanacPage, icon: 'home'},
-      {title: 'Courses', component: CoursesPage, icon: 'home'},
-      {title: 'E-Library', component: ElibraryPage, icon: 'paper'},
-      {title: 'Gallery', component: GalleryPage, icon: 'camera'},
-      {title: 'News Hub', component: NewsPage, icon: 'home'}
+      {title: 'Home', component: HomePage, icon: '../assets/icon/icons8-sweet-home.png'},
+      {title: 'UDSL Background', component: BackgroundPage, icon: '../assets/icon/icons8-browser-history.png'},
+      {title: 'Almanac', component: AlmanacPage, icon: '../assets/icon/icons8-timetable.png'},
+      {title: 'Courses', component: CoursesPage, icon: '../assets/icon/icons8-course.png'},
+      {title: 'E-Library', component: ElibraryPage, icon: '../assets/icon/icons8-library-building.png'},
+      {title: 'Gallery', component: GalleryPage, icon: '../assets/icon/icons8-gallery.png'},
+      {title: 'News Hub', component: NewsPage, icon: '../assets/icon/icons8-news.png'}
     ];
   }
 

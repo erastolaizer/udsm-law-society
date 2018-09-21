@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {TripService} from "../../services/trip-service";
 
 /**
  * Generated class for the GalleryPage page.
@@ -14,8 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'gallery.html',
 })
 export class GalleryPage {
+  public trips: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public nav: NavController, public tripService: TripService) {
+    // set sample data
+    this.trips = tripService.getAll();
   }
 
   ionViewDidLoad() {

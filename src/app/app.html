@@ -40,7 +40,7 @@
   <ion-content class="appMenu">
 
      <ion-item no-lines menuClose class="sideMenu bold text-white" *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
-        <ion-icon item-left [name]="menuItem.icon" color="white"></ion-icon>
+        <img item-left [src]="menuItem.icon">
         <span ion-text color="white">{{menuItem.title}}</span>
       </ion-item> 
   </ion-content>
