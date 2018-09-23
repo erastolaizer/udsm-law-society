@@ -9,7 +9,6 @@ import {TripService} from "../../services/trip-service";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-gallery',
   templateUrl: 'gallery.html',

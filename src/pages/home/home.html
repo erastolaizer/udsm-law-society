@@ -18,7 +18,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="animated fadeIn common-bg">
+<ion-content padding class="animated fadeIn common-bg homeContent">
 
   <ion-card no-margin margin-bottom class="full-width">
     <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
@@ -34,24 +34,44 @@
   <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
     <ion-icon name="search"></ion-icon> Search
   </button>
-  <ion-row align="center">
-    <ion-col col-4>
+  <ion-row align="center" class="animated fadeInDown">
+    <ion-col col-4 (tap)="gotoPage('BackgroundPage')">
       <div class="user-avatar">
-        <img src="../assets/img/icons8-order-history.png">
+        <img src="assets/img/icons8-browser-history.png">
       </div>
-      <div ion-label>UDSL</div>
+      <div ion-label>UDLS background</div>
   </ion-col>
-  <ion-col col-4>
+  <ion-col col-4 (tap)="gotoPage('ElibraryPage')">
     <div class="user-avatar">
-      <img src="../assets/img/icons8-library-building.png">
+      <img src="assets/img/icons8-library-building.png">
     </div>
     <div ion-label>E-Library</div>
 </ion-col>
-<ion-col col-4>
+<ion-col col-4 (tap)="gotoPage('AlmanacPage')">
   <div class="user-avatar">
-    <img src="../assets/img/icons8-timetable.png">
+    <img src="assets/img/icons8-timetable-2.png">
   </div>
   <div ion-label>Almanac</div>
 </ion-col>
   </ion-row>
+  <ion-row align="center" class="animated fadeInDown">
+      <ion-col col-4 (tap)="gotoPage('CoursesPage')">
+        <div class="user-avatar">
+          <img src="assets/img/icons8-course.png">
+        </div>
+        <div ion-label>Courses</div>
+    </ion-col>
+    <ion-col col-4 (tap)="gotoPage('GalleryPage')">
+      <div class="user-avatar">
+        <img src="assets/img/icons8-compact-camera.png">
+      </div>
+      <div ion-label>Gallery</div>
+  </ion-col>
+  <ion-col col-4 (tap)="gotoPage('NewsPage')">
+    <div class="user-avatar">
+      <img src="assets/img/icons8-news.png">
+    </div>
+    <div ion-label>News</div>
+  </ion-col>
+    </ion-row>
 </ion-content>

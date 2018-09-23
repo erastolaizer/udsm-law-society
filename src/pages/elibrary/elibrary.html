@@ -6,16 +6,25 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
     <ion-title>Elibrary</ion-title>
+    <ion-buttons end>
+      <button ion-button tappable (click)="zoom_out()">
+          <ion-icon name="remove"></ion-icon>
+        </button>
+      <button ion-button tappable (click)="zoom_in()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<pdf-viewer src="http://eknygos.lsmuni.lt/springer/336/523-560.pdf" [original-size]="true"  [zoom]="zoom_to"></pdf-viewer> 
 
 </ion-content>

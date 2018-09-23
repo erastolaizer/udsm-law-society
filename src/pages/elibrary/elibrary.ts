@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DocumentViewer,DocumentViewerOptions } from '@ionic-native/document-viewer';
 
 /**
  * Generated class for the ElibraryPage page.
@@ -8,18 +9,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-elibrary',
   templateUrl: 'elibrary.html',
 })
 export class ElibraryPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+public pdfSrc = '../assets/library/udsl.pdf' ;
+public zoom_to = 1 ;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private document: DocumentViewer) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ElibraryPage');
   }
+  zoom_in() {
+    this.zoom_to = this.zoom_to + 0.25;
+  }
 
+  zoom_out() {
+    if (this.zoom_to > 1) {
+       this.zoom_to = this.zoom_to - 0.25;
+    }
+  }
 }

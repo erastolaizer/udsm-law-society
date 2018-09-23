@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { DocumentViewer } from '@ionic-native/document-viewer';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -30,6 +32,7 @@ import { BackgroundPage } from '../pages/background/background';
 import { ElibraryPage } from '../pages/elibrary/elibrary';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { NewsPage } from '../pages/news/news';
+import { NewsProvider } from '../providers/news/news';
 
 // import services
 // end import services
@@ -60,6 +63,7 @@ import { NewsPage } from '../pages/news/news';
   ],
   imports: [
     BrowserModule,
+    PdfViewerModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
@@ -95,10 +99,12 @@ import { NewsPage } from '../pages/news/news';
     StatusBar,
     SplashScreen,
     Keyboard,
+    DocumentViewer,
     ActivityService,
     TripService,
     WeatherProvider,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    NewsProvider
   ]
 })
 
