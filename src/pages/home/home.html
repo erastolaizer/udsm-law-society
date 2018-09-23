@@ -7,33 +7,16 @@
     <ion-title>
       <strong>Udsm Law Society</strong>
     </ion-title>
-    <ion-buttons end>
-      <button ion-button tappable (click)="presentNotifications($event)">
-        <ion-icon name="notifications"></ion-icon>
-      </button>
-      <button ion-button tappable (click)="goToAccount()">
-        <ion-icon name="cog"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="animated fadeIn common-bg homeContent">
 
-  <ion-card no-margin margin-bottom class="full-width">
-    <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
-      <ion-icon name="search" color="primary" item-left></ion-icon>
-      <span>{{ search.name }}</span>
-    </ion-item>
-    <ion-item>
-      <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
-      <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="search.date"></ion-datetime>
-    </ion-item>
-  </ion-card>
-
-  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
-    <ion-icon name="search"></ion-icon> Search
-  </button>
+   <ion-card><img src="assets/img/lawSchool.jpg" class="image-container"alt=""></ion-card>
+    <p ion-text text-justify color="dark">
+         The University of Dar es Salaam School of Law is one of the academic units of the University of Dar es Salaam. Situated on the University main campus (Mwalimu Julius Nyerere Campus) in A B Weston building, the School is the oldest higher education training institution in Tanzania. Since its foundation in 1961, the Faculty continued to offer undergraduate and postgraduate studies to date. In 2009, the University changed structures of its academic units to improve their efficiencies. Consequently, the Faculty of Law became School of Law. These changes have allowed the School to expand in its core mandate in teaching, research, consultancy and public service.
+     </p>
+     
   <ion-row align="center" class="animated fadeInDown">
     <ion-col col-4 (tap)="gotoPage('BackgroundPage')">
       <div class="user-avatar">

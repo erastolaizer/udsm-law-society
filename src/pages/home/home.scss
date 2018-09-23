@@ -1,4 +1,10 @@
-page-home,
+page-home{
+  font-size:18px;	
+  .image-container {
+      min-height: 300px;
+      background-size: cover;
+  }
+}
 .home {
   ion-list {
     border-radius: 1rem;

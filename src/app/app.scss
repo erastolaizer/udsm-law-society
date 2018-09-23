@@ -4,7 +4,11 @@
 
 // global styles
 .appMenu {
-  background-image: linear-gradient(135deg, color($colors, dark), color($colors, primary), color($colors, light));
+  background-color: color($colors, primary) !important;
+}
+.image-container {
+  min-height: 200px;
+  background-size: cover;
 }
 .sideMenu {
 background-color: transparent !important ;
