@@ -10,21 +10,20 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>Elibrary</ion-title>
-    <ion-buttons end>
-      <button ion-button tappable (click)="zoom_out()">
-          <ion-icon name="remove"></ion-icon>
-        </button>
-      <button ion-button tappable (click)="zoom_in()">
-          <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-buttons>
+    <ion-title>E-library</ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<pdf-viewer src="http://eknygos.lsmuni.lt/springer/336/523-560.pdf" [original-size]="true"  [zoom]="zoom_to"></pdf-viewer> 
+  <loading *ngIf="!isLoaded" text="Loading Library..." style="padding-top:60%"></loading>
+<ion-list>
+<ion-item  class="text-dark" *ngFor="let document of documents" (click)="viewDoc(document)" >
+<img src="assets/pdf.png" alt="" item-left >
+<span color="white">{{document.name}}</span>
+</ion-item>
+</ion-list>
 
 </ion-content>

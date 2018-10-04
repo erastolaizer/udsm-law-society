@@ -1,5 +1,5 @@
 <!--
-  Generated template for the NewsPage page.
+  Generated template for the ViewNewsPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -10,22 +10,20 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>News</ion-title>
+    <ion-title>News: More details</ion-title>
   </ion-navbar>
 
 </ion-header>
 <ion-content padding>
-  <loading *ngIf="!isLoaded" text="Loading news..." style="padding-top:60%"></loading>
-
-  <ion-card *ngFor="let News of news" (click)="readMore(News)">
+  <ion-card>
     <ion-card-content ion-text text-justify color="dark">
       <ion-card-title>
       <p class="title">
-         {{News.header}}
+         {{news.header}}
       </p>
       </ion-card-title>
       <p>
-         {{News.shortDescription}}.. <span class="title">Read More</span>
+         {{news.content}}
       </p>
   </ion-card-content>
   </ion-card>

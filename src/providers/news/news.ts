@@ -13,5 +13,10 @@ export class NewsProvider {
   constructor(public http: HttpClient) {
     console.log('Hello NewsProvider Provider');
   }
-
+  getNews(){
+  return this.http.get('http://saratani.dreamgeeks.tech/api/getNews');
+  }
+  getDocuments(){
+  return this.http.get('http://saratani.dreamgeeks.tech/api/getDocuments');
+  }
 }

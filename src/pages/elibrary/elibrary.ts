@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DocumentViewer,DocumentViewerOptions } from '@ionic-native/document-viewer';
-
+import { LoadingComponent } from '../../components/loading/loading';
+import { NewsProvider } from '../../providers/news/news';
+import { HttpClient } from '@angular/common/http';
+import { DocumentPage } from '../document/document';
 /**
  * Generated class for the ElibraryPage page.
  *
@@ -14,21 +17,20 @@ import { DocumentViewer,DocumentViewerOptions } from '@ionic-native/document-vie
   templateUrl: 'elibrary.html',
 })
 export class ElibraryPage {
-public pdfSrc = '../assets/library/udsl.pdf' ;
-public zoom_to = 1 ;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private document: DocumentViewer) {
+public documents:any ;
+public  isLoaded:boolean = false ;
+  constructor(public http:HttpClient, public navCtrl: NavController, public navParams: NavParams,private document: DocumentViewer) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ElibraryPage');
-  }
-  zoom_in() {
-    this.zoom_to = this.zoom_to + 0.25;
+this.http.get('http://saratani.dreamgeeks.tech/api/getDocuments').subscribe((documents:any)=> {
+  this.isLoaded = true ;
+  this.documents = documents.documents ;
+  console.log(this.documents);
+});
   }
 
-  zoom_out() {
-    if (this.zoom_to > 1) {
-       this.zoom_to = this.zoom_to - 0.25;
-    }
-  }
+viewDoc(doc){
+  this.navCtrl.push(DocumentPage, {'document':doc});
+}
 }

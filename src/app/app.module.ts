@@ -5,7 +5,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 import { DocumentViewer } from '@ionic-native/document-viewer';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Keyboard} from '@ionic-native/keyboard';
@@ -15,7 +14,6 @@ import {TripService} from "../services/trip-service";
 import {WeatherProvider} from "../services/weather";
 
 import {MyApp} from "./app.component";
-
 import {SettingsPage} from "../pages/settings/settings";
 import {CheckoutTripPage} from "../pages/checkout-trip/checkout-trip";
 import {HomePage} from "../pages/home/home";
@@ -28,11 +26,14 @@ import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { AlmanacPage } from '../pages/almanac/almanac';
 import { CoursesPage } from '../pages/courses/courses';
+import { DocumentPage } from '../pages/document/document';
 import { BackgroundPage } from '../pages/background/background';
 import { ElibraryPage } from '../pages/elibrary/elibrary';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { NewsPage } from '../pages/news/news';
 import { NewsProvider } from '../providers/news/news';
+import { LoadingComponent } from '../components/loading/loading';
+import { ViewNewsPage } from '../pages/view-news/view-news';
 
 // import services
 // end import services
@@ -43,9 +44,12 @@ import { NewsProvider } from '../providers/news/news';
 
 @NgModule({
   declarations: [
+    LoadingComponent,
     MyApp,
+    DocumentPage,
     AlmanacPage,
     CoursesPage,
+    ViewNewsPage,
     BackgroundPage,
     ElibraryPage,
     GalleryPage,
@@ -80,6 +84,8 @@ import { NewsProvider } from '../providers/news/news';
     MyApp,
     AlmanacPage,
     CoursesPage,
+    ViewNewsPage,
+    DocumentPage,
     BackgroundPage,
     ElibraryPage,
     GalleryPage,
