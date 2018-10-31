@@ -1,4 +1,4 @@
-<!-- -->
+﻿<!-- -->
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
@@ -36,13 +36,14 @@
     </div>
     <div ion-label>E-Library</div>
 </ion-col>
-<ion-col col-4 (tap)="gotoPage('AlmanacPage')">
+<ion-col col-4 (tap)="windowBrowser('https://www.udsm.ac.tz/basic/almanac-and-prospectus')">
   <div class="user-avatar">
     <img src="assets/img/icons8-timetable-2.png">
   </div>
   <div ion-label>Almanac</div>
 </ion-col>
   </ion-row>
+
   <ion-row align="center" class="animated fadeInDown">
       <ion-col col-4 (tap)="gotoPage('CoursesPage')">
         <div class="user-avatar">
@@ -63,4 +64,57 @@
     <div ion-label>News</div>
   </ion-col>
     </ion-row>
+
+<ion-row align="center" class="animated fadeInDown">
+      <ion-col col-4 (tap)="windowBrowser('https://aris2.udsm.ac.tz')">
+        <div class="user-avatar">
+          <img src="assets/img/icons8-aris.png">
+        </div>
+        <div ion-label>Aris</div>
+    </ion-col>
+    <ion-col col-4 (tap)="windowBrowser('http://sol.udsm.ac.tz')">
+      <div class="user-avatar">
+        <img src="assets/img/icons8-available-updates-2.png">
+      </div>
+      <div ion-label>School Update</div>
+  </ion-col>
+  <ion-col col-4 (tap)="gotoPage('LinksPage')">
+    <div class="user-avatar">
+      <img src="assets/img/icons8-link.png">
+    </div>
+    <div ion-label>Useful Links</div>
+  </ion-col>
+    </ion-row>
+
+<ion-row align="center" class="animated fadeInDown">
+      <ion-col col-4 (tap)="windowBrowser('http://www.lrct.go.tz/court-of-appeal-judgements/')">
+        <div class="user-avatar">
+          <img src="assets/img/icons8-law.png">
+        </div>
+        <div ion-label>Legal Interns</div>
+    </ion-col>
+    <ion-col col-4 (tap)="gotoPage('ContactPage')">
+      <div class="user-avatar">
+        <img src="assets/img/icons8-contact-us.png">
+      </div>
+      <div ion-label>Contact Us</div>
+  </ion-col>
+  <ion-col col-4 (tap)="whatsappShare()">
+    <div class="user-avatar">
+      <img src="assets/img/icons8-share.png">
+    </div>
+    <div ion-label>Share Us</div>
+  </ion-col>
+    </ion-row>
+
+<ion-fab bottom right>
+   <button  ion-fab color="light"><img item-left src="assets/icon/icons8-share.png"></button>
+<ion-fab-list side="top">
+      <button ion-fab (click)="whatsappShare()"><img item-left src="assets/icon/icons8-whatsapp.png"></button>
+      <button ion-fab (click)="facebookShare()"><img item-left src="assets/icon/icons8-facebook.png"></button>
+      <button ion-fab (click)="twitterShare()"><img item-left src="assets/icon/icons8-twitter.png"></button>
+      <button ion-fab (click)="instagramShare()"><img item-left src="assets/icon/icons8-instagram.png"></button>
+
+ </ion-fab-list>
+  </ion-fab>
 </ion-content>

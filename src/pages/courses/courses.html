@@ -10,12 +10,169 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>courses</ion-title>
+    <ion-title>UDLS Courses</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+<loading text ="Loading courses" *ngIf="loading"></loading>
+<div *ngIf="!loading" >
+<ion-label color="dark" (click)="law()">Bachelor of Laws (LLB)  <ion-icon name="arrow-dropdown" *ngIf="!llb" ></ion-icon><ion-icon name="arrow-dropup" *ngIf="llb"></ion-icon></ion-label>
+ <div class="" ion-item no-lines style="color:primary" *ngIf="llb">
+       <ion-label color="primary" (click)="llbCourse('1')"> First Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!llb1" ></ion-icon> <ion-icon name="arrow-dropup" *ngIf="llb1"></ion-icon> </ion-label>
+ </div>
+   <div *ngIf="llb && llb1">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let llb1 of courses.llb1">
+     <ion-col col-3 class="text-dark">{{llb1.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{llb1.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb1.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb1.semester}}</ion-col>
+      </ion-row>
+  </div>
+ <div class="" ion-item no-lines style="color:primary" *ngIf="llb">
+      <ion-label color= "primary" (click)="llbCourse('2')" > Second Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!llb2"></ion-icon><ion-icon name="arrow-dropup" *ngIf="llb2" ></ion-icon> </ion-label>
+</div>
+   <div *ngIf="llb && llb2">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let llb2 of courses.llb2">
+     <ion-col col-3 class="text-dark">{{llb2.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{llb2.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb2.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb2.semester}}</ion-col>
+      </ion-row>
+  </div>
+ <div class="" ion-item no-lines style="color:primary" *ngIf="llb">
+      <ion-label color= "primary" (click)="llbCourse('3')"> Third Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!llb3"></ion-icon><ion-icon name="arrow-dropup" *ngIf="llb3"></ion-icon> </ion-label>
+ </div>
+  <div *ngIf="llb  && llb3">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let llb3 of courses.llb3">
+     <ion-col col-3 class="text-dark">{{llb3.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{llb3.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb3.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb3.semester}}</ion-col>
+      </ion-row>
+  </div>
+<div class="" ion-item no-lines *ngIf="llb">
+      <ion-label color= "primary" (click)="llbCourse('4')"> Fourth Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!llb4"></ion-icon><ion-icon name="arrow-dropup" *ngIf="llb4"></ion-icon></ion-label> 
+</div>
+  <div *ngIf="llb  && llb4">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let llb4 of courses.llb4">
+     <ion-col col-3 class="text-dark">{{llb4.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{llb4.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb4.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llb4.semester}}</ion-col>
+      </ion-row>
+  </div>
+<div class="" ion-item no-lines *ngIf="llb">
+      <ion-label color= "primary" (click)="llbCourse('o')"> Optional Courses <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!llbo"></ion-icon><ion-icon name="arrow-dropup" *ngIf="llbo"></ion-icon></ion-label> 
+</div>
+  <div *ngIf="llb  && llbo">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-7>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        
+      </ion-row>
+    <ion-row *ngFor="let llbo of courses.llb_options">
+     <ion-col col-3 class="text-dark">{{llbo.course_code}}</ion-col>
+     <ion-col col-7 class="text-dark">{{llbo.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{llbo.credits}}</ion-col>
+      </ion-row>
+  </div>
 
+
+
+<ion-label color="dark" (click)="lawB()">Bachelor of Arts in Law Enforcement (BALE)  <ion-icon name="arrow-dropdown" *ngIf="!bale" ></ion-icon><ion-icon name="arrow-dropup" *ngIf="bale"></ion-icon></ion-label>
+   <div class="" ion-item no-lines style="color:primary" *ngIf="bale">
+      <ion-label color="primary" (click)="baleCourse('1')"> First Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!bale1" ></ion-icon> <ion-icon name="arrow-dropup" *ngIf="bale1"></ion-icon> </ion-label>
+  </div>
+  <div *ngIf="bale && bale1">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let bale1 of courses.bale1">
+     <ion-col col-3 class="text-dark">{{bale1.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{bale1.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{bale1.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{bale1.semester}}</ion-col>
+      </ion-row>
+  </div>
+ <div class="" ion-item no-lines style="color:primary" *ngIf="bale">
+      <ion-label color= "primary" (click)="baleCourse('2')"> Second Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!bale2"></ion-icon><ion-icon name="arrow-dropup" *ngIf="bale2" ></ion-icon> </ion-label>
+</div>
+   <div *ngIf="bale && bale2">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let bale2 of courses.bale2">
+     <ion-col col-3 class="text-dark">{{bale2.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{bale2.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{bale2.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{bale2.semester}}</ion-col>
+      </ion-row>
+  </div>
+ <div class="" ion-item no-lines style="color:primary" *ngIf="bale">
+      <ion-label color= "primary" (click)="baleCourse('3')"> Third Year <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!bale3"></ion-icon><ion-icon name="arrow-dropup" *ngIf="bale3"></ion-icon> </ion-label>
+ </div>
+  <div *ngIf="bale && bale3">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-5>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+        <ion-col col-2>Semester</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let bale3 of courses.bale3">
+     <ion-col col-3 class="text-dark">{{bale3.course_code}}</ion-col>
+     <ion-col col-5 class="text-dark">{{bale3.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{bale3.credits}}</ion-col>
+     <ion-col col-2 class="text-dark">{{bale3.semester}}</ion-col>
+      </ion-row>
+  </div>
+<div class="" ion-item no-lines *ngIf="bale">
+      <ion-label color= "primary" (click)="baleCourse('o')"> Optional Courses <ion-icon name ="arrow-dropdown" color="primary" *ngIf="!baleo"></ion-icon><ion-icon name="arrow-dropup" *ngIf="baleo"></ion-icon></ion-label> 
+</div>
+  <div *ngIf="bale && baleo">
+       <ion-row>
+        <ion-col col-3>Course Code</ion-col>
+        <ion-col col-7>Course Title</ion-col>
+        <ion-col col-2>Credits</ion-col>
+      </ion-row>
+    <ion-row *ngFor="let baleo of courses.bale_options">
+     <ion-col col-3 class="text-dark">{{baleo.course_code}}</ion-col>
+     <ion-col col-7 class="text-dark">{{baleo.course_title}}</ion-col>
+     <ion-col col-2 class="text-dark">{{baleo.credits}}</ion-col>
+      </ion-row>
+  </div>
+
+</div>
 </ion-content>

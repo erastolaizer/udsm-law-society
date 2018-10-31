@@ -12,6 +12,10 @@ import { BackgroundPage } from '../background/background';
 import { ElibraryPage } from '../elibrary/elibrary';
 import { GalleryPage } from '../gallery/gallery';
 import { NewsPage } from '../news/news';
+import { LinksPage } from '../links/links';
+import { ContactPage } from '../contact/contact';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +29,7 @@ export class HomePage {
     date: new Date().toISOString()
   }
 
-  constructor(private storage: Storage, public nav: NavController, public popoverCtrl: PopoverController) {
+  constructor(private iab: InAppBrowser,public socialSharing :SocialSharing , private storage: Storage, public nav: NavController, public popoverCtrl: PopoverController) {
   }
 
   ionViewWillEnter() {
@@ -84,6 +88,47 @@ export class HomePage {
     else if(page == 'CoursesPage'){
       this.nav.push(CoursesPage);
     }
+    else if(page == 'ContactPage'){
+      this.nav.push(ContactPage);
+    }
+    else if(page == 'LinksPage'){
+      this.nav.push(LinksPage);
+    }
+  }
+
+windowBrowser(link){
+ this.iab.create(link,'_system');
+  
+}
+
+//social sharing
+ instagramShare() {
+    this.socialSharing.shareViaInstagram("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null).then(() => {
+      console.log("shareViaInstagram: Success");
+    }).catch(() => {
+      console.error("shareViaInstagram: failed");
+    });
+  }
+  whatsappShare() {
+    this.socialSharing.shareViaWhatsApp("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+      console.log("shareViaWhatsApp: Success");
+    }).catch(() => {
+      console.error("shareViaWhatsApp: failed");
+    });
+  }
+ twitterShare() {
+    this.socialSharing.shareViaTwitter("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+      console.log("shareViaTwitter: Success");
+    }).catch(() => {
+      console.error("shareViaTwitter: failed");
+    });
+  }
+  facebookShare() {
+    this.socialSharing.shareViaFacebook("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+      console.log("shareViaFacebook: Success");
+    }).catch(() => {
+      console.error("shareViaFacebook: failed");
+    });
   }
 
 }

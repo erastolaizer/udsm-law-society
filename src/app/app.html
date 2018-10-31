@@ -9,6 +9,48 @@
         <img item-left [src]="menuItem.icon">
         <span ion-text color="white">{{menuItem.title}}</span>
       </ion-item> 
+
+     <ion-item no-lines menuClose class="sideMenu bold text-white" >
+      <img item-left src="assets/icon/icons8-exam-paper.png">
+        <span ion-text color="white" (click)="windowBrowser('https://aris2.udsm.ac.tz');">Aris</span>
+       </ion-item>
+
+<ion-item no-lines menuClose class="sideMenu bold text-white" >
+      <img item-left src="assets/icon/icons8-available-updates-2.png">
+        <span ion-text color="white" (click)="windowBrowser('http://sol.udsm.ac.tz');">School Updates</span>
+       </ion-item>
+
+ <ion-item no-lines menuClose class="sideMenu bold text-white" >
+      <img item-left src="assets/icon/icons8-link.png">
+        <span ion-text color="white" (click)="links()">Useful Links</span>
+       </ion-item>
+
+<ion-item no-lines menuClose class="sideMenu bold text-white" >
+      <img item-left src="assets/icon/icons8-law.png">
+        <span ion-text color="white" (click)="windowBrowser('http://www.lrct.go.tz/court-of-appeal-judgements/');">Legal Interns</span>
+       </ion-item>
+
+     <ion-item no-lines menuClose class="sideMenu bold text-white" (click)="contact()">
+      <img item-left src="assets/icon/icons8-contact-us.png">
+        <span ion-text color="white">Contact Us</span>
+       </ion-item> 
+
+<ion-item no-lines menuClose (click)="whatsappShare()" class="sideMenu bold text-white">
+      <img item-left src="assets/icon/icons8-share-2.png">
+        <span ion-text color="white">Share Us</span>
+       </ion-item>
+
+<ion-fab right top>
+   <button  ion-fab color="light"><img item-left src="assets/icon/icons8-share.png"></button>
+<ion-fab-list side="down">
+      <button ion-fab (click)="whatsappShare()"><img item-left src="assets/icon/icons8-whatsapp.png"></button>
+      <button ion-fab (click)="facebookShare()"><img item-left src="assets/icon/icons8-facebook.png"></button>
+      <button ion-fab (click)="twitterShare()"><img item-left src="assets/icon/icons8-twitter.png"></button>
+      <button ion-fab (click)="instagramShare()"><img item-left src="assets/icon/icons8-instagram.png"></button>
+
+ </ion-fab-list>
+  </ion-fab> <br>
+ 
   </ion-content>
 
 </ion-menu>

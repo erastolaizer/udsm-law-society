@@ -4,7 +4,8 @@ import { Platform, Nav } from "ionic-angular";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
@@ -14,7 +15,8 @@ import { BackgroundPage } from '../pages/background/background';
 import { ElibraryPage } from '../pages/elibrary/elibrary';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { NewsPage } from '../pages/news/news';
-
+import { ContactPage } from '../pages/contact/contact';
+import { LinksPage } from '../pages/links/links';
 export interface MenuItem {
     title: string;
     component: any;
@@ -34,6 +36,8 @@ export class MyApp {
 
   constructor(
     public platform: Platform,
+    public socialSharing :SocialSharing ,
+    private iab: InAppBrowser,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public keyboard: Keyboard
@@ -57,7 +61,7 @@ export class MyApp {
 
       //*** Control Splash Screen
       // this.splashScreen.show();
-      // this.splashScreen.hide();
+        this.splashScreen.hide();
 
       //*** Control Status Bar
       this.statusBar.styleDefault();
@@ -69,13 +73,57 @@ export class MyApp {
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
+console.log(page.title);
+     if(page.title == 'Almanac') {
+     this.windowBrowser('https://www.udsm.ac.tz/basic/almanac-and-prospectus');
+     }
+  else {
     this.nav.setRoot(page.component);
+}
   }
+contact() {
+    this.nav.setRoot(ContactPage);
+   }
+links() {
+    this.nav.setRoot(LinksPage);
+   }
+windowBrowser(link){
+ this.iab.create(link,'_system');
+  
+}
 
   logout() {
     this.nav.setRoot(LoginPage);
+  }
+
+//social sharing
+ instagramShare() {
+    this.socialSharing.shareViaInstagram("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null).then(() => {
+      console.log("shareViaInstagram: Success");
+    }).catch(() => {
+      console.error("shareViaInstagram: failed");
+    });
+  }
+  whatsappShare() {
+    this.socialSharing.shareViaWhatsApp("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+      console.log("shareViaWhatsApp: Success");
+    }).catch(() => {
+      console.error("shareViaWhatsApp: failed");
+    });
+  }
+ twitterShare() {
+    this.socialSharing.shareViaTwitter("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+      console.log("shareViaTwitter: Success");
+    }).catch(() => {
+      console.error("shareViaTwitter: failed");
+    });
+  }
+  facebookShare() {
+    this.socialSharing.shareViaFacebook("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+      console.log("shareViaFacebook: Success");
+    }).catch(() => {
+      console.error("shareViaFacebook: failed");
+    });
   }
 
 }

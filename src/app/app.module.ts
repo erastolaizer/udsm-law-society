@@ -12,6 +12,7 @@ import {Keyboard} from '@ionic-native/keyboard';
 import {ActivityService} from "../services/activity-service";
 import {TripService} from "../services/trip-service";
 import {WeatherProvider} from "../services/weather";
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import {MyApp} from "./app.component";
 import {SettingsPage} from "../pages/settings/settings";
@@ -32,9 +33,11 @@ import { ElibraryPage } from '../pages/elibrary/elibrary';
 import { GalleryPage } from '../pages/gallery/gallery';
 import { NewsPage } from '../pages/news/news';
 import { NewsProvider } from '../providers/news/news';
+import { ContactPage } from '../pages/contact/contact';
 import { LoadingComponent } from '../components/loading/loading';
 import { ViewNewsPage } from '../pages/view-news/view-news';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
+import {LinksPage} from "../pages/links/links";
 // import services
 // end import services
 // end import services
@@ -47,8 +50,10 @@ import { ViewNewsPage } from '../pages/view-news/view-news';
     LoadingComponent,
     MyApp,
     DocumentPage,
+  LinksPage,
     AlmanacPage,
     CoursesPage,
+ContactPage,
     ViewNewsPage,
     BackgroundPage,
     ElibraryPage,
@@ -68,6 +73,7 @@ import { ViewNewsPage } from '../pages/view-news/view-news';
   imports: [
     BrowserModule,
     PdfViewerModule,
+    
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
@@ -89,6 +95,8 @@ import { ViewNewsPage } from '../pages/view-news/view-news';
     BackgroundPage,
     ElibraryPage,
     GalleryPage,
+ContactPage,
+LinksPage,
     NewsPage,
     SettingsPage,
     CheckoutTripPage,
@@ -103,8 +111,10 @@ import { ViewNewsPage } from '../pages/view-news/view-news';
   ],
   providers: [
     StatusBar,
+    InAppBrowser,
     SplashScreen,
     Keyboard,
+   SocialSharing,
     DocumentViewer,
     ActivityService,
     TripService,
