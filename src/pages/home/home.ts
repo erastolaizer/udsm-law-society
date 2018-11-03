@@ -103,28 +103,28 @@ windowBrowser(link){
 
 //social sharing
  instagramShare() {
-    this.socialSharing.shareViaInstagram("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null).then(() => {
+    this.socialSharing.shareViaInstagram("https://play.google.com/store/apps/details?id=com.erastolaizer.UdsmLawSociety&hl=en", null).then(() => {
       console.log("shareViaInstagram: Success");
     }).catch(() => {
       console.error("shareViaInstagram: failed");
     });
   }
   whatsappShare() {
-    this.socialSharing.shareViaWhatsApp("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+    this.socialSharing.shareViaWhatsApp("https://play.google.com/store/apps/details?id=com.erastolaizer.UdsmLawSociety&hl=en", null, null).then(() => {
       console.log("shareViaWhatsApp: Success");
     }).catch(() => {
       console.error("shareViaWhatsApp: failed");
     });
   }
  twitterShare() {
-    this.socialSharing.shareViaTwitter("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+    this.socialSharing.shareViaTwitter("https://play.google.com/store/apps/details?id=com.erastolaizer.UdsmLawSociety&hl=en", null, null).then(() => {
       console.log("shareViaTwitter: Success");
     }).catch(() => {
       console.error("shareViaTwitter: failed");
     });
   }
   facebookShare() {
-    this.socialSharing.shareViaFacebook("https://play.google.com/store/apps/details?id=com.UdsmLawSociety&hl=en", null, null).then(() => {
+    this.socialSharing.shareViaFacebook("https://play.google.com/store/apps/details?id=com.erastolaizer.UdsmLawSociety&hl=en", null, null).then(() => {
       console.log("shareViaFacebook: Success");
     }).catch(() => {
       console.error("shareViaFacebook: failed");
